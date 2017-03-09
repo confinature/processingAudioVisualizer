@@ -54,7 +54,7 @@ void draw()
     float h = map(i, 0, specSize, 0, 100);
     float ellipseSize = map(fft.getBand(i), 0, BUFSIZE/16, 0, width/2);
     float x = map(i, 0, fft.specSize(), width/2, 0);
-    fill(311, h, 100, 70);
+    fill(311, h, 100, 100);
     ellipse(x, height/2, ellipseSize*20, ellipseSize*20);
   }
 
@@ -70,7 +70,7 @@ void draw()
     float h = map(i, 0, specSize, 0, 100);
     float ellipseSize = map(fft.getBand(i), 0, BUFSIZE/16, 0, width/2);
     float x = map(i, 0, specSize, width/2, width);
-    fill(311, h, 100, 70);
+    fill(311, h, 100, 100);
     ellipse(x, height/2, ellipseSize*20, ellipseSize*20);
   }
 }
