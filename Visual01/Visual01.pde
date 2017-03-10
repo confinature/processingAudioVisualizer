@@ -1,3 +1,5 @@
+//結構チカチカするやつです
+
 // Minim を使用する準備です
 import ddf.minim.analysis.*;
 import ddf.minim.*;
@@ -39,7 +41,7 @@ void draw()
 {
   // 背景色を 10% の黒で塗りつぶします
   // 前フレームの内容が薄く残ります
-  fill(311, 100, 100, 50);
+  fill(344, 50, 90, 50);
   rect(0, 0, width, height);
 
   // FFT 実行（左チャンネル）
@@ -54,8 +56,8 @@ void draw()
     float h = map(i, 0, specSize, 0, 100);
     float ellipseSize = map(fft.getBand(i), 0, BUFSIZE/16, 0, width/2);
     float x = map(i, 0, fft.specSize(), width/2, 0);
-    fill(311, h, 100, 100);
-    ellipse(x, height/2, ellipseSize*20, ellipseSize*20);
+    fill(344, h, 90, 100);
+    ellipse(x, height/2, ellipseSize*10, ellipseSize*10);
   }
 
   // FFT 実行（右チャンネル）
@@ -70,8 +72,8 @@ void draw()
     float h = map(i, 0, specSize, 0, 100);
     float ellipseSize = map(fft.getBand(i), 0, BUFSIZE/16, 0, width/2);
     float x = map(i, 0, specSize, width/2, width);
-    fill(311, h, 100, 100);
-    ellipse(x, height/2, ellipseSize*20, ellipseSize*20);
+    fill(344, h, 90, 100);
+    ellipse(x, height/2, ellipseSize*10, ellipseSize*10);
   }
 }
 
