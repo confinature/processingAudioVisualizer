@@ -29,6 +29,8 @@ void setup(){
   
   //線は描画しない
   noStroke();
+  
+  //frameRate(40);
 }
 
 int ang=0;//真ん中の円で使う
@@ -48,24 +50,24 @@ void draw(){
   float mid=0;
   float high=0;
 
-  //各円を動かす(低音,中音、高音)
+  //各円を動かす
   for(int j=0;j<=85;j++)
     low+=fft.getBand(j);
   float lowSound=low/85;
   fill(107, 71, 91, 100);
-  ellipse(width/2, height/2, lowSound*900+500, lowSound*900+500);
+  ellipse(width/2, height/2, lowSound*300+550, lowSound*300+550);
       
   for(int j=85;j<170;j++)
     mid+=fft.getBand(j);
   float midSound=mid/85;
   fill(209, 100, 92, 100);
-  ellipse(width/2, height/2, midSound*1200+400, midSound*1200+400);
+  ellipse(width/2, height/2, midSound*500+400, midSound*500+400);
   
   for(int j=170;j<specSize;j++)
     high+=fft.getBand(j);
   float highSound=high/85;
   fill(330, 64, 92, 100);
-  ellipse(width/2, height/2, highSound*1200+250, highSound*1200+250);
+  ellipse(width/2, height/2, highSound*200+250, highSound*200+250);
   
   //真ん中の円
   fill(360);
